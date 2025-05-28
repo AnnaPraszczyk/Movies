@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Movies.Application.Movie.MovieDto>
+@{
+	ViewData["Title"] = "Movies";
+}
+
+<h1>Movies</h1>
+<p>
+	<a asp-action="Create" class="btn btn-secondary">Create New</a>
+</p>
+<div class="row">
+	@foreach (var item in Model)
+	{
+		<div class="card m-3" style="width: 18rem;">
+			<div class="card-body">
+				<h3 class="card-title">@item.Title</h3>
+				<h6 class="card-subtitle mb-2 text-muted">@item.Description</h6>
+				<p class="card-text">@item.Genre</p>
+				<p class="card-text">@item.Year</p>
+				<p class="card-text">@item.Director</p>
+				<a href="#" class="btn btn-primary">Details</a>
+				<a href="#" class="btn btn-outline-secondary">Edit</a>
+			</div>
+		</div>
+	}
+</div>
